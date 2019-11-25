@@ -1,6 +1,5 @@
 package by.siarhei.shapes.repository.impl;
 
-import by.siarhei.shapes.entity.api.Figure;
 import by.siarhei.shapes.entity.impl.Ball;
 import by.siarhei.shapes.repository.CompareType;
 import by.siarhei.shapes.repository.api.BallSpecification;
@@ -8,16 +7,17 @@ import by.siarhei.shapes.repository.api.FiguresInMemoryRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
 public class BallRepository implements FiguresInMemoryRepository {
     private static final Logger logger = LogManager.getLogger();
     private static BallRepository instance;
-    private List<Ball> repository = new ArrayList<>();
+    private Set<Ball> repository = new HashSet<>();
 
     private BallRepository() {
     }
@@ -30,8 +30,8 @@ public class BallRepository implements FiguresInMemoryRepository {
     }
 
     @Override
-    public List<Ball> getAllUnmodifiableList() {
-        return Collections.unmodifiableList(repository);
+    public Set<Ball> getAllUnmodifiableSet() {
+        return Collections.unmodifiableSet(repository);
     }
 
     @Override
@@ -50,13 +50,15 @@ public class BallRepository implements FiguresInMemoryRepository {
         return repository.stream().filter(specification::specified).collect(Collectors.toList());
     }
 
-    @Override
-    public boolean removeFigure(Figure figure) {
-        return repository.remove(figure);
+    public List<Ball> query(BallSpecification specification, CompareType type) {
+        List<Ball> list = query(specification);
+        list.sort(type.getComparatorByType());
+        return list;
     }
 
     @Override
-    public void sort(CompareType type) {
-        this.repository.sort(type.getComparatorByType());
+    public boolean removeFigure(Ball figure) {
+        return repository.remove(figure);
     }
+
 }

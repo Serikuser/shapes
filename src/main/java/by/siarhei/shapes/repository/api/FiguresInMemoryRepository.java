@@ -1,13 +1,12 @@
 package by.siarhei.shapes.repository.api;
 
-import by.siarhei.shapes.entity.api.Figure;
 import by.siarhei.shapes.entity.impl.Ball;
-import by.siarhei.shapes.repository.CompareType;
 
 import java.util.List;
+import java.util.Set;
 
 public interface FiguresInMemoryRepository {
-    List<Ball> getAllUnmodifiableList();
+    Set<Ball> getAllUnmodifiableSet();
 
     void addFigure(Ball figure);
 
@@ -15,7 +14,6 @@ public interface FiguresInMemoryRepository {
 
     List<Ball> query(BallSpecification specification);
 
-    boolean removeFigure(Figure figure);
+    boolean removeFigure(Ball figure);
 
-    void sort(CompareType type);
 }

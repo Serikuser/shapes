@@ -40,8 +40,8 @@ public class BallSpecificationByCenterPointTest {
     @Test
     void queryByCenterTest() {
         List<Ball> actualList = BallRepository.getInstance().query(byCenter);
-        expectedList.add(ball1);
         expectedList.add(ball2);
+        expectedList.add(ball1);
         Assert.assertEquals(actualList, expectedList);
     }
 }

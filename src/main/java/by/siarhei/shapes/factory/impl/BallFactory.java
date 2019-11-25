@@ -16,7 +16,7 @@ public class BallFactory implements FigureFactory {
     private InputDataParser parser;
     private CoordinateFactory coordinateFactory;
 
-    public BallFactory(){
+    public BallFactory() {
         coordinateFactory = new PointFactory();
         parser = new InputDataParser();
     }

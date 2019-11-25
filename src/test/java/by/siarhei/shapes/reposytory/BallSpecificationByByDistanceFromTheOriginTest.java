@@ -40,8 +40,8 @@ public class BallSpecificationByByDistanceFromTheOriginTest {
     @Test
     void queryByRangeTest() {
         List<Ball> actualList = BallRepository.getInstance().query(byDistance);
-        expectedList.add(ball1);
         expectedList.add(ball2);
+        expectedList.add(ball1);
         Assert.assertEquals(actualList, expectedList);
     }
 }

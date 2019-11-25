@@ -32,8 +32,8 @@ public class ParametersWarehouse {
         warehouseMap.put(figureId, parameters);
     }
 
-    public void putParameters(Ball ball) {
-        warehouseMap.put(ball.getFigureId(), calculator.calculateParameters(ball));
+    public void putParameters(Ball figure) {
+        warehouseMap.put(figure.getFigureId(), calculator.calculateParameters(figure));
     }
 
     public void removeParameters(Long figureId) {
@@ -51,16 +51,16 @@ public class ParametersWarehouse {
                 .setVolume(BallCalculationService.volume(figure.getRadius()));
         instance.getParameters(figure)
                 .setIntersectionOfCoordinateAxes(BallCheckService.intersectionOfCoordinateAxesCheck(figure));
-        message(figure);
+        messageAfterRecalculation(figure);
     }
 
     public void reCalculateParametersAfterCoordinateChanges(Ball figure) {
         instance.getParameters(figure)
                 .setIntersectionOfCoordinateAxes(BallCheckService.intersectionOfCoordinateAxesCheck(figure));
-        message(figure);
+        messageAfterRecalculation(figure);
     }
 
-    private void message(Ball figure) {
+    private void messageAfterRecalculation(Ball figure) {
         logger.info(String.format("Recalculated parameters for the figure with the id: %s placed in the warehouse ", figure.getFigureId()));
     }
 }
