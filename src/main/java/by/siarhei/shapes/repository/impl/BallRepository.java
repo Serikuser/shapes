@@ -2,8 +2,8 @@ package by.siarhei.shapes.repository.impl;
 
 import by.siarhei.shapes.entity.impl.Ball;
 import by.siarhei.shapes.repository.CompareType;
-import by.siarhei.shapes.repository.api.BallSpecification;
-import by.siarhei.shapes.repository.api.FiguresInMemoryRepository;
+import by.siarhei.shapes.repository.BallSpecification;
+import by.siarhei.shapes.repository.FiguresInMemoryRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

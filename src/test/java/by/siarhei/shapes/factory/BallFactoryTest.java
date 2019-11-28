@@ -18,13 +18,15 @@ public class BallFactoryTest {
     void setUp() {
         expectedBall = new Ball(101, 5,
                 new Point(1, 1, 1));
-        factory = new BallFactory();
+        factory = BallFactory.getInstance();
 
     }
 
     @AfterClass
     void setDown() {
         factory = null;
+        expectedBall = null;
+        actualBall = null;
     }
 
     @Test

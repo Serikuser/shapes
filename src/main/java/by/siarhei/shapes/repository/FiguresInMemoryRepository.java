@@ -1,4 +1,4 @@
-package by.siarhei.shapes.repository.api;
+package by.siarhei.shapes.repository;
 
 import by.siarhei.shapes.entity.impl.Ball;
 

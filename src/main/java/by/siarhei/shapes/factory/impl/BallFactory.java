@@ -13,12 +13,19 @@ import org.apache.logging.log4j.Logger;
 
 public class BallFactory implements FigureFactory {
     private static final Logger logger = LogManager.getLogger();
+    private static BallFactory instance;
     private InputDataParser parser;
     private CoordinateFactory coordinateFactory;
 
-    public BallFactory() {
-        coordinateFactory = new PointFactory();
+    private BallFactory() {
+        coordinateFactory = PointFactory.getInstance();
         parser = new InputDataParser();
+    }
+    public static BallFactory getInstance() {
+        if (instance == null) {
+            instance = new BallFactory();
+        }
+        return instance;
     }
 
     @Override

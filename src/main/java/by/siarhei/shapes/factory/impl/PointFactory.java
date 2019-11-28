@@ -6,9 +6,17 @@ import by.siarhei.shapes.parser.InputDataParser;
 
 public class PointFactory implements CoordinateFactory {
     private InputDataParser parser;
+    private static PointFactory instance;
 
-    public PointFactory() {
+    private PointFactory() {
         parser = new InputDataParser();
+    }
+
+    public static PointFactory getInstance() {
+        if (instance == null) {
+            instance = new PointFactory();
+        }
+        return instance;
     }
 
     public Point createPoint(String line) {

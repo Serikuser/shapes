@@ -2,7 +2,7 @@ package by.siarhei.shapes.repository.impl;
 
 import by.siarhei.shapes.entity.impl.Ball;
 import by.siarhei.shapes.entity.impl.Point;
-import by.siarhei.shapes.repository.api.BallSpecification;
+import by.siarhei.shapes.repository.BallSpecification;
 
 public class BallSpecificationByCenterPoint implements BallSpecification {
     private Point targetPoint;

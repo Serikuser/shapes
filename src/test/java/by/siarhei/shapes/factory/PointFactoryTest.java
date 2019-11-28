@@ -16,7 +16,7 @@ public class PointFactoryTest {
     void setUp() {
         expectedPoint = new Point(1, 1, 1);
         inputLine = "101 1 1 1 5";
-        factory = new PointFactory();
+        factory = PointFactory.getInstance();
     }
 
     @AfterClass

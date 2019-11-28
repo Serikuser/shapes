@@ -1,7 +1,7 @@
 package by.siarhei.shapes.repository.impl;
 
 import by.siarhei.shapes.entity.impl.Ball;
-import by.siarhei.shapes.repository.api.BallSpecification;
+import by.siarhei.shapes.repository.BallSpecification;
 import by.siarhei.shapes.service.BallCalculationService;
 
 public class BallSpecificationByVolume implements BallSpecification {
