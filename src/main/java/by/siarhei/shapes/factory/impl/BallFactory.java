@@ -1,6 +1,6 @@
 package by.siarhei.shapes.factory.impl;
 
-import by.siarhei.shapes.entity.api.Figure;
+import by.siarhei.shapes.entity.Figure;
 import by.siarhei.shapes.entity.impl.Ball;
 import by.siarhei.shapes.entity.impl.Point;
 import by.siarhei.shapes.factory.CoordinateFactory;

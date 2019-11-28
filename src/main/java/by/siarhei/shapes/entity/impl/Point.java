@@ -1,6 +1,6 @@
 package by.siarhei.shapes.entity.impl;
 
-import by.siarhei.shapes.entity.api.Coordinate;
+import by.siarhei.shapes.entity.Coordinate;
 
 public class Point implements Coordinate {
     private double x;

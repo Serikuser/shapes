@@ -1,6 +1,6 @@
 package by.siarhei.shapes.entity.impl;
 
-import by.siarhei.shapes.entity.api.Figure;
+import by.siarhei.shapes.entity.Figure;
 import by.siarhei.shapes.event.EventType;
 import by.siarhei.shapes.observer.ChangesParametersListener;
 

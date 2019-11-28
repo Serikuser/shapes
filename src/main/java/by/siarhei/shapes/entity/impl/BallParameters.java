@@ -1,6 +1,6 @@
 package by.siarhei.shapes.entity.impl;
 
-import by.siarhei.shapes.entity.api.FigureParameters;
+import by.siarhei.shapes.entity.FigureParameters;
 
 public class BallParameters implements FigureParameters {
 
